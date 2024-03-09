@@ -5,6 +5,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   selector: 'meompt-platform-root',
-  template: '',
+  template: '<p>Meompt</p>',
 })
-export class AppComponent { }
+export class AppComponent {}
