@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'meompt-platform-login',
@@ -8,7 +9,7 @@ import { RouterModule } from '@angular/router';
     <section
       class="min-h-screen bg-gradient-to-tr from-meompt-light-blue to-meompt-blue flex justify-center items-center p-8"
     >
-      <div class="bg-white p-6 rounded-2xl shadow-2xl text-center">
+      <div class="bg-white p-6 rounded-2xl shadow-2xl text-center w-full">
         <img
           src="../../assets/images/logo/weompt-logo-horizontal.png"
           alt="Weompt logo"
@@ -61,4 +62,12 @@ import { RouterModule } from '@angular/router';
   `,
   standalone: true,
 })
-export class LoginPage {}
+export class LoginPage {
+  private readonly _databaseService = inject(DatabaseService);
+
+  ngOnInit() {
+    this._databaseService.getUser().subscribe((users) => {
+      console.log(users);
+    });
+  }
+}

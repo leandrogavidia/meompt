@@ -12,6 +12,13 @@ export const appRoutes: Route[] = [
       import('./pages/sign-up/sign-up.component').then((m) => m.SignUpPage),
   },
   {
+    path: 'onboarding',
+    loadComponent: () =>
+      import('./pages/onboarding/onboarding-page.component').then(
+        (m) => m.OnboardingPage
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

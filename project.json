@@ -8,15 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/meompt-platform",
         "index": "./src/index.html",
         "browser": "./src/main.ts",
-        "polyfills": ["zone.js", "./src/polyfills.ts"],
+        "polyfills": [
+          "zone.js",
+          "./src/polyfills.ts"
+        ],
         "tsConfig": "./tsconfig.app.json",
-        "assets": ["./src/favicon.ico", "./src/assets"],
-        "styles": ["./src/styles.css"],
+        "assets": [
+          "./src/favicon.ico",
+          "./src/assets"
+        ],
+        "styles": [
+          "./src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -60,6 +70,23 @@
       "options": {
         "buildTarget": "meompt-platform:build"
       }
+    },
+    "deploy": {
+      "executor": "@angular/fire:deploy",
+      "options": {
+        "version": 2
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "meompt-platform:build:production",
+          "serveTarget": "meompt-platform:serve:production"
+        },
+        "development": {
+          "buildTarget": "meompt-platform:build:development",
+          "serveTarget": "meompt-platform:serve:development"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   }
 }

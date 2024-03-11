@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "meompt-fde2e"
+  },
+  "targets": {
+    "meompt-fde2e": {
+      "hosting": {
+        "meompt-platform": [
+          "meompt-fde2e"
+        ]
+      }
+    }
+  }
+}
