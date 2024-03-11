@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
     <section
       class="min-h-screen bg-gradient-to-tr from-meompt-light-blue to-meompt-blue flex justify-center items-center p-8"
     >
-      <div class="bg-white p-6 rounded-2xl shadow-2xl text-center">
+      <div class="bg-white p-6 rounded-2xl shadow-2xl text-center w-full">
         <img
           src="../../assets/images/logo/weompt-logo-horizontal.png"
           alt="Weompt logo"

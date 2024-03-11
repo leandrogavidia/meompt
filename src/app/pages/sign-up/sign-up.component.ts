@@ -7,8 +7,8 @@ import { RouterModule } from '@angular/router';
   template: `<section
     class="min-h-screen bg-gradient-to-tr from-meompt-light-blue to-meompt-blue flex justify-center items-center p-8"
   >
-    <div class="bg-white p-6 rounded-2xl shadow-2xl text-center">
-      <h2 class="mt-5 mb-6 text-2xl font-bold">Creating a Meompt account</h2>
+    <div class="bg-white p-6 rounded-2xl shadow-2xl text-center w-full">
+      <h2 class="m-0 mb-6 text-2xl font-bold">Cr eating a Meompt account</h2>
       <form>
         <fieldset class="flex flex-col justify-center items-start">
           <label for="email" class="font-semibold text-base mb-1 text-left"
