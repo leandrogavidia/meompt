@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'meompt-platform-login',
@@ -61,4 +62,12 @@ import { RouterModule } from '@angular/router';
   `,
   standalone: true,
 })
-export class LoginPage {}
+export class LoginPage {
+  private readonly _databaseService = inject(DatabaseService);
+
+  ngOnInit() {
+    this._databaseService.getUser().subscribe((users) => {
+      console.log(users);
+    });
+  }
+}

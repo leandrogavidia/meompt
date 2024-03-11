@@ -19,13 +19,14 @@ module.exports = {
       textColor: {
         'meompt-white': '#FFFFFF',
         'meompt-black': '#1D242B',
+        'meompt-error': '#ff0000',
       },
       colors: {
         'meompt-white': '#FAFAFA',
         'meompt-light-blue': '#C7EEFF',
         'meompt-blue': '#0077C0',
         'meompt-black': '#1D242B',
-      }
+      },
     },
   },
   plugins: [],
