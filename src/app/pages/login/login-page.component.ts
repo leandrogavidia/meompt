@@ -7,7 +7,7 @@ import { DatabaseService } from 'src/app/services/database.service';
   imports: [RouterModule],
   template: `
     <section
-      class="min-h-screen bg-gradient-to-tr from-meompt-light-blue to-meompt-blue flex justify-center items-center p-8"
+      class="min-h-screen bg-gradient-to-br from-meompt-light-blue to-meompt-blue flex justify-center items-center p-8"
     >
       <div class="bg-white p-6 rounded-2xl shadow-2xl text-center w-full">
         <img
