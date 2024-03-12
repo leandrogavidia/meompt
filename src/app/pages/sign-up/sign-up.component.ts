@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { LoaderComponent } from 'src/app/components/loader.component';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -143,6 +143,7 @@ export class SignUpPage {
   isSubmitting = false;
 
   private readonly _authService = inject(AuthService);
+  private readonly _router = inject(Router);
 
   toggleIsSubmitting(value: boolean) {
     this.isSubmitting = value;
@@ -163,7 +164,9 @@ export class SignUpPage {
           email: this.model.email,
           password: this.model.password,
         });
-        console.log(response);
+        if (response.user.uid) {
+          this._router.navigate(['/onboarding']);
+        }
       }
     } catch (e) {
       console.error(e);
