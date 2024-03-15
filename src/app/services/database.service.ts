@@ -10,9 +10,17 @@ import {
 export class DatabaseService {
   constructor(private firestore: Firestore) {}
 
-  registerUser(user: { email: String; password: String }) {
-    const usersRef = collection(this.firestore, 'users');
-    return addDoc(usersRef, user);
+  createProfile({
+    image,
+    fullname,
+    description,
+  }: {
+    image: string | null;
+    fullname: string;
+    description: string | null;
+  }) {
+    const profilesRef = collection(this.firestore, 'profiles');
+    return addDoc(profilesRef, { image, fullname, description });
   }
 
   getUser() {

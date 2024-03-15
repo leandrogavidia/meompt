@@ -22,7 +22,9 @@ export interface SignUpFormPayload {
   template: `<section
     class="min-h-screen bg-gradient-to-br from-meompt-light-blue to-meompt-blue flex justify-center items-center p-8"
   >
-    <div class="bg-white p-6 rounded-2xl shadow-2xl text-center w-full">
+    <div
+      class="bg-white p-6 rounded-2xl shadow-2xl text-center w-full max-w-[360px]"
+    >
       <h2 class="m-0 mb-6 text-2xl font-bold">Creating a Meompt account</h2>
       <form #form="ngForm" (ngSubmit)="onSubmitForm(form)">
         <fieldset
@@ -113,7 +115,7 @@ export interface SignUpFormPayload {
             type="submit"
             class="w-full h-8 rounded-full bg-meompt-blue text-meompt-white font-semibold my-4 flex justify-center items-center gap-x-2 {{
               isSubmitting &&
-                'select-none cursor-default bg-meompt-blue/60 gap-x-2'
+                'select-none cursor-default pointer-events-none bg-meompt-blue/60 gap-x-2'
             }}"
           >
             @if (isSubmitting) {
