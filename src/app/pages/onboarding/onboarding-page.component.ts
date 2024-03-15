@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LoaderComponent } from 'src/app/components/loader.component';
+import { MeomptPlatformWalletMultiButtonComponent } from 'src/app/components/web3/connect-wallet/wallet-multi-button.component';
 import { DatabaseService } from 'src/app/services/database.service';
 
 export interface OnboardingFormModel {
@@ -17,7 +18,11 @@ export interface OnboardingFormPayload {
 
 @Component({
   selector: 'meompt-platform-onboarding',
-  imports: [FormsModule, LoaderComponent],
+  imports: [
+    FormsModule,
+    LoaderComponent,
+    MeomptPlatformWalletMultiButtonComponent,
+  ],
   template: `<section
     class="min-h-screen bg-gradient-to-br from-meompt-light-blue to-meompt-blue flex justify-center items-center p-8"
   >
@@ -133,6 +138,7 @@ export interface OnboardingFormPayload {
       class="bg-white p-6 rounded-2xl shadow-2xl text-center w-full max-w-[360px]"
     >
       <h2 class="mb-6 text-2xl font-bold mt-0">Link your Solana wallet!</h2>
+      <meompt-platform-wallet-multi-button></meompt-platform-wallet-multi-button>
     </div>
     }
   </section>`,
